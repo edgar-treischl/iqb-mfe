@@ -1,48 +1,37 @@
-import { useMemo, useState } from 'react'
-import { DatasetView } from './components/DatasetView.tsx'
-import { ExplorerView } from './components/ExplorerView.tsx'
-import {
-  DATASET_SUMMARY,
-  filterPenguins,
-  getMetric,
-  type MetricKey,
-  type SpeciesFilter,
-} from './penguins.ts'
+import { useState } from 'react'
+import { OverviewView } from './components/OverviewView.tsx'
+import { ResultsView } from './components/ResultsView.tsx'
+import { DataDescriptionView } from './components/DataDescriptionView.tsx'
 import './App.css'
 
 const VIEW_OPTIONS = [
-  { key: 'explorer', label: 'Explorer' },
-  { key: 'dataset', label: 'Dataset' },
+  { key: 'overview', label: 'Übersicht' },
+  { key: 'results', label: 'Detailergebnisse' },
+  { key: 'data', label: 'Datenbeschreibung' },
 ] as const
 
 type ViewKey = (typeof VIEW_OPTIONS)[number]['key']
 
+const VIEW_TITLES: Record<ViewKey, string> = {
+  overview: 'Übersicht',
+  results: 'Detailergebnisse',
+  data: 'Datenbeschreibung',
+}
+
 export default function App() {
-  const [view, setView] = useState<ViewKey>('explorer')
-  const [speciesFilter, setSpeciesFilter] = useState<SpeciesFilter>('All species')
-  const [xMetricKey, setXMetricKey] = useState<MetricKey>('flipperLength')
-  const [yMetricKey, setYMetricKey] = useState<MetricKey>('bodyMass')
-
-  const filteredPenguins = useMemo(() => filterPenguins(speciesFilter), [speciesFilter])
-  const xMetric = getMetric(xMetricKey)
-  const yMetric = getMetric(yMetricKey)
-
-  const title = view === 'explorer' ? 'Explorer' : 'Dataset'
-  const summaryValue =
-    view === 'explorer' ? filteredPenguins.length.toLocaleString() : DATASET_SUMMARY.totalRows.toLocaleString()
-  const summaryLabel = view === 'explorer' ? 'visible samples' : 'rows in source'
+  const [view, setView] = useState<ViewKey>('overview')
 
   return (
-    <main className="penguins-app">
+    <main className="iqb-app">
       <section className="panel">
         <header className="panel-header">
           <div>
-            <p className="eyebrow">Palmer Penguins</p>
-            <h1>{title}</h1>
+            <p className="eyebrow">IQB-Bildungstrend 2022</p>
+            <h1>{VIEW_TITLES[view]}</h1>
           </div>
           <div className="summary-chip">
-            <strong>{summaryValue}</strong>
-            <span>{summaryLabel}</span>
+            <strong>Deutsch</strong>
+            <span>Jahrgangsstufe 9</span>
           </div>
         </header>
 
@@ -59,19 +48,11 @@ export default function App() {
           ))}
         </nav>
 
-        {view === 'explorer' ? (
-          <ExplorerView
-            filteredPenguins={filteredPenguins}
-            speciesFilter={speciesFilter}
-            xMetric={xMetric}
-            yMetric={yMetric}
-            onSpeciesFilterChange={setSpeciesFilter}
-            onXMetricChange={setXMetricKey}
-            onYMetricChange={setYMetricKey}
-          />
-        ) : (
-          <DatasetView datasetSummary={DATASET_SUMMARY} />
-        )}
+        <div className="view-content">
+          {view === 'overview' && <OverviewView />}
+          {view === 'results' && <ResultsView />}
+          {view === 'data' && <DataDescriptionView />}
+        </div>
       </section>
     </main>
   )

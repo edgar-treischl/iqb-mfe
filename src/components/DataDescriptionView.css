@@ -1,0 +1,148 @@
+.data-description-view {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.description-section {
+  margin-bottom: 2.5rem;
+}
+
+.description-section h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.description-section p {
+  margin: 0.75rem 0;
+  color: #374151;
+}
+
+.competency-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.level-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.level-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+.level-badge.level-v {
+  background-color: #01665e;
+}
+
+.level-badge.level-iv {
+  background-color: #5ab4ac;
+}
+
+.level-badge.level-iii {
+  background-color: #c7eae5;
+  color: #111827;
+}
+
+.level-badge.level-ii {
+  background-color: #f6e8c3;
+  color: #111827;
+}
+
+.level-badge.level-ib {
+  background-color: #d8b365;
+}
+
+.level-badge.level-ia {
+  background-color: #8c510a;
+}
+
+.level-content {
+  flex: 1;
+}
+
+.level-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.level-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.domain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.domain-item {
+  padding: 1rem;
+  border-left: 4px solid #3b82f6;
+  background: #f9fafb;
+}
+
+.domain-item h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+  color: #111827;
+}
+
+.domain-item p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.population-list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.population-list li {
+  margin: 0.75rem 0;
+  color: #374151;
+}
+
+.population-list strong {
+  color: #111827;
+}
+
+.source-section {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.source-section a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.source-section a:hover {
+  text-decoration: underline;
+}

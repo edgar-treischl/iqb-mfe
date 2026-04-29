@@ -5,8 +5,8 @@ import App from './App.tsx'
 
 const rootElement = document.getElementById('root')!
 
-document.body.classList.add('penguins-app-body')
-rootElement.classList.add('penguins-app-root')
+document.body.classList.add('iqb-app-body')
+rootElement.classList.add('iqb-app-root')
 
 createRoot(rootElement).render(
   <StrictMode>

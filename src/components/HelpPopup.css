@@ -1,0 +1,138 @@
+.help-popup-container {
+  position: relative;
+  display: inline-block;
+}
+
+.help-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.help-icon-button:hover {
+  background: #f3f4f6;
+  color: #3b82f6;
+}
+
+.help-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.help-popup-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  z-index: 1000;
+  animation: slideUp 0.2s ease-out;
+}
+
+.help-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.help-popup-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.help-popup-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 1.75rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.help-popup-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.help-popup-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(80vh - 80px);
+}
+
+.help-popup-content p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.help-popup-content p:last-child {
+  margin-bottom: 0;
+}
+
+.help-popup-content ul {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  color: #374151;
+}
+
+.help-popup-content li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.help-popup-content strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
