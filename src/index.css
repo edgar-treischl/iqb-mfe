@@ -1,10 +1,38 @@
+:root {
+  /* Color system - IQB neutral palette */
+  --iqb-surface: #ffffff;
+  --iqb-elevated: #f9fafb;
+  --iqb-border: #e5e7eb;
+  --iqb-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  
+  /* Text colors */
+  --iqb-text: #111827;
+  --iqb-heading: #1f2937;
+  --iqb-muted: #6b7280;
+  
+  /* Accent colors - IQB blue gradient */
+  --iqb-accent: #3b82f6;
+  --iqb-accent-dark: #1e40af;
+  --iqb-accent-soft: rgba(59, 130, 246, 0.1);
+  
+  /* Status colors */
+  --iqb-success-strong: #059669;
+  --iqb-success-soft: #d1fae5;
+  --iqb-success-border: #6ee7b7;
+  
+  --iqb-warning-strong: #d97706;
+  --iqb-warning-soft: #fef3c7;
+  --iqb-warning-border: #fcd34d;
+}
+
 body.iqb-app-body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f3f4f6;
+  background: var(--iqb-elevated);
+  color: var(--iqb-text);
 }
 
 .iqb-app-root {
@@ -13,4 +41,14 @@ body.iqb-app-body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
 }

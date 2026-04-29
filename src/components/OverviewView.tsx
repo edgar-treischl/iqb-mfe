@@ -16,7 +16,7 @@ const HELP_CONTENT = (
   <>
     <p>
       Diese Grafiken zeigen die <strong>Kompetenzstufenverteilung</strong> für Bayern und
-      Deutschland (insgesamt) in den drei getesteten Bereichen.
+      Deutschland in den drei getesteten Bereichen.
     </p>
     <p>
       <strong>Kompetenzstufen:</strong>
@@ -55,7 +55,7 @@ export function OverviewView() {
           <p>
             Die folgenden Grafiken zeigen die Kompetenzstufenverteilung in der Jahrgangsstufe 9 im
             Fach Deutsch im IQB-Bildungstrend 2022 für <strong>Bayern</strong> und{' '}
-            <strong>Deutschland</strong> (insgesamt).
+            <strong>Deutschland</strong>.
           </p>
           <p className="note">
             <strong>Anmerkung:</strong> Werte kleiner 5 % werden in den Grafiken nicht ausgewiesen.

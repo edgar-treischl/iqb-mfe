@@ -83,7 +83,7 @@ export function ResultsView() {
       <div className="results-header">
         <div className="results-header-text">
           <h2>Detaillierte Ergebnisse</h2>
-          <p>Wählen Sie die gewünschten Filter, um spezifische Teilpopulationen zu analysieren.</p>
+          <p>Wählen Sie die gewünschten Filter, um spezifische Teilgruppen zu betrachten.</p>
         </div>
         <HelpPopup title="Erläuterungen zu den Detailergebnissen" content={HELP_CONTENT} />
       </div>
@@ -91,16 +91,6 @@ export function ResultsView() {
       <div className="results-content">
         <div className="results-chart-section">
           <h3 className="chart-title">{currentBereichInfo?.title || bereichFilter}</h3>
-
-          <div className="chart-wrapper">
-            {groups.length > 0 ? (
-              <StackedBarChart groups={groups} showLegend={false} />
-            ) : (
-              <div className="chart-empty">
-                <p>Keine Daten für die gewählten Filter verfügbar.</p>
-              </div>
-            )}
-          </div>
 
           <div className="results-filters">
             <div className="filter-group">
@@ -119,7 +109,7 @@ export function ResultsView() {
             </div>
 
             <div className="filter-group">
-              <label htmlFor="bula-filter">Bundesland:</label>
+              <label htmlFor="bula-filter">Analyseeinheit:</label>
               <select
                 id="bula-filter"
                 value={bulaFilter}
@@ -135,7 +125,7 @@ export function ResultsView() {
             </div>
 
             <div className="filter-group">
-              <label htmlFor="teilpop-filter">Teilpopulation:</label>
+              <label htmlFor="teilpop-filter">Gruppe:</label>
               <select
                 id="teilpop-filter"
                 value={teilpopFilter}
@@ -150,6 +140,16 @@ export function ResultsView() {
                 ))}
               </select>
             </div>
+          </div>
+
+          <div className="chart-wrapper">
+            {groups.length > 0 ? (
+              <StackedBarChart groups={groups} showLegend={false} />
+            ) : (
+              <div className="chart-empty">
+                <p>Keine Daten für die gewählten Filter verfügbar.</p>
+              </div>
+            )}
           </div>
 
           {groups.length > 0 && (
@@ -188,9 +188,9 @@ export function ResultsView() {
             <dl className="selection-summary">
               <dt>Bereich:</dt>
               <dd>{bereichFilter}</dd>
-              <dt>Bundesland:</dt>
+              <dt>Analyseeinheit:</dt>
               <dd>{bulaFilter}</dd>
-              <dt>Teilpopulation:</dt>
+              <dt>Gruppe:</dt>
               <dd>
                 {teilpopFilter === 'Alle'
                   ? 'Alle'

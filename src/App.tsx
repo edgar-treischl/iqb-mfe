@@ -23,24 +23,24 @@ export default function App() {
 
   return (
     <main className="iqb-app">
-      <section className="panel">
-        <header className="panel-header">
+      <section className="iqb-app__panel">
+        <header className="iqb-app__hero">
           <div>
-            <p className="eyebrow">IQB-Bildungstrend 2022</p>
-            <h1>{VIEW_TITLES[view]}</h1>
+            <p className="iqb-app__eyebrow">IQB-Bildungstrend 2022</p>
+            <h1 className="iqb-app__title">{VIEW_TITLES[view]}</h1>
           </div>
-          <div className="summary-chip">
+          <div className="iqb-app__status">
             <strong>Deutsch</strong>
-            <span>Jahrgangsstufe 9</span>
+            <span> · Jahrgangsstufe 9</span>
           </div>
         </header>
 
-        <nav className="view-switch" aria-label="View selector">
+        <nav className="iqb-app__tabs" aria-label="View selector">
           {VIEW_OPTIONS.map((option) => (
             <button
               key={option.key}
               type="button"
-              className={option.key === view ? 'view-tab is-active' : 'view-tab'}
+              className={option.key === view ? 'iqb-app__tab iqb-app__tab--active' : 'iqb-app__tab'}
               onClick={() => setView(option.key)}
             >
               {option.label}
@@ -48,7 +48,7 @@ export default function App() {
           ))}
         </nav>
 
-        <div className="view-content">
+        <div className="iqb-app__content">
           {view === 'overview' && <OverviewView />}
           {view === 'results' && <ResultsView />}
           {view === 'data' && <DataDescriptionView />}

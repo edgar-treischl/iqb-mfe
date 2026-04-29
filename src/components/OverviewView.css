@@ -1,8 +1,8 @@
 .overview-view {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem;
+  gap: 18px;
+  padding: 24px;
   height: 100%;
   overflow-y: auto;
 }
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 24px;
   flex-shrink: 0;
 }
 
@@ -19,52 +19,55 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 12px;
 }
 
 .overview-intro p {
   margin: 0;
   line-height: 1.6;
+  color: var(--iqb-text);
 }
 
 .overview-intro .note {
-  font-size: 0.875rem;
-  color: #4b5563;
+  font-size: 0.88rem;
+  color: var(--iqb-muted);
 }
 
 .overview-charts {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 24px;
 }
 
 .overview-chart-item {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 2rem;
-  padding: 1.5rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #ffffff;
+  gap: 24px;
+  padding: 20px;
+  border: 1px solid var(--iqb-border);
+  border-radius: 16px;
+  background: var(--iqb-elevated);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
 }
 
 .chart-description {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .chart-description h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: #111827;
+  color: var(--iqb-heading);
+  font-weight: 600;
 }
 
 .chart-description p {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.88rem;
   line-height: 1.6;
-  color: #4b5563;
+  color: var(--iqb-muted);
 }
 
 .chart-container {
@@ -75,9 +78,10 @@
 .overview-legend-container {
   display: flex;
   justify-content: center;
-  padding: 1rem;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 16px;
+  border-top: 1px solid var(--iqb-border);
+  border-bottom: 1px solid var(--iqb-border);
+  background: var(--iqb-surface);
 }
 
 .overview-footer {
@@ -85,12 +89,24 @@
   justify-content: center;
   flex-shrink: 0;
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 16px;
 }
 
 .overview-footer .caption {
   margin: 0;
-  font-size: 0.75rem;
-  color: #6b7280;
+  font-size: 0.88rem;
+  color: var(--iqb-muted);
   font-style: italic;
+}
+
+@media (max-width: 1180px) {
+  .overview-chart-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .overview-view {
+    padding: 16px;
+  }
 }

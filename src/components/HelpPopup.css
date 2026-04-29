@@ -11,15 +11,16 @@
   height: 32px;
   border: none;
   background: transparent;
-  color: #6b7280;
+  color: var(--iqb-muted);
   cursor: pointer;
   border-radius: 50%;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .help-icon-button:hover {
-  background: #f3f4f6;
-  color: #3b82f6;
+  background: var(--iqb-elevated);
+  color: var(--iqb-accent);
+  transform: scale(1.05);
 }
 
 .help-popup-overlay {
@@ -38,8 +39,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  border-radius: 12px;
+  background: var(--iqb-surface);
+  border-radius: 20px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   max-width: 500px;
   width: 90%;
@@ -47,21 +48,23 @@
   overflow: hidden;
   z-index: 1000;
   animation: slideUp 0.2s ease-out;
+  border: 1px solid var(--iqb-border);
 }
 
 .help-popup-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--iqb-border);
+  background: var(--iqb-elevated);
 }
 
 .help-popup-header h3 {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--iqb-heading);
 }
 
 .help-popup-close {
@@ -72,29 +75,30 @@
   justify-content: center;
   border: none;
   background: transparent;
-  color: #6b7280;
+  color: var(--iqb-muted);
   font-size: 1.75rem;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.2s;
+  border-radius: 8px;
+  transition: all 0.15s ease;
   line-height: 1;
 }
 
 .help-popup-close:hover {
-  background: #f3f4f6;
-  color: #111827;
+  background: var(--iqb-elevated);
+  color: var(--iqb-heading);
+  transform: rotate(90deg);
 }
 
 .help-popup-content {
-  padding: 1.5rem;
+  padding: 24px;
   overflow-y: auto;
   max-height: calc(80vh - 80px);
 }
 
 .help-popup-content p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 16px 0;
   line-height: 1.6;
-  color: #374151;
+  color: var(--iqb-text);
 }
 
 .help-popup-content p:last-child {
@@ -102,18 +106,18 @@
 }
 
 .help-popup-content ul {
-  margin: 0.75rem 0;
-  padding-left: 1.5rem;
-  color: #374151;
+  margin: 12px 0;
+  padding-left: 24px;
+  color: var(--iqb-text);
 }
 
 .help-popup-content li {
-  margin: 0.5rem 0;
+  margin: 8px 0;
   line-height: 1.6;
 }
 
 .help-popup-content strong {
-  color: #111827;
+  color: var(--iqb-heading);
   font-weight: 600;
 }
 
