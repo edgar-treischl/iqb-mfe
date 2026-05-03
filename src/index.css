@@ -11,9 +11,9 @@
   --iqb-muted: #6b7280;
   
   /* Accent colors - IQB blue gradient */
-  --iqb-accent: #3b82f6;
-  --iqb-accent-dark: #1e40af;
-  --iqb-accent-soft: rgba(59, 130, 246, 0.1);
+  --iqb-accent: #669bbc;
+  --iqb-accent-dark: #003049;
+  --iqb-accent-soft: rgba(102, 155, 188, 0.1);
   
   /* Status colors */
   --iqb-success-strong: #059669;

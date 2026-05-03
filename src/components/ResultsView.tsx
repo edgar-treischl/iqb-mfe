@@ -82,7 +82,7 @@ export function ResultsView() {
     <div className="results-view">
       <div className="results-header">
         <div className="results-header-text">
-          <h2>Detaillierte Ergebnisse</h2>
+          <h2>Ergebnisse im Detail</h2>
           <p>Wählen Sie die gewünschten Filter, um spezifische Teilgruppen zu betrachten.</p>
         </div>
         <HelpPopup title="Erläuterungen zu den Detailergebnissen" content={HELP_CONTENT} />
@@ -90,8 +90,7 @@ export function ResultsView() {
 
       <div className="results-content">
         <div className="results-chart-section">
-          <h3 className="chart-title">{currentBereichInfo?.title || bereichFilter}</h3>
-
+          
           <div className="results-filters">
             <div className="filter-group">
               <label htmlFor="bereich-filter">Bereich:</label>
@@ -173,35 +172,12 @@ export function ResultsView() {
         </div>
 
         <div className="results-info-section">
-          <div className="info-card">
-            <h4>Beschreibung</h4>
-            <p>{currentBereichInfo?.description}</p>
-          </div>
 
           <div className="info-card">
             <h4>Interpretation</h4>
             <p>{currentBereichInfo?.interpretation}</p>
           </div>
 
-          <div className="info-card">
-            <h4>Aktuelle Auswahl</h4>
-            <dl className="selection-summary">
-              <dt>Bereich:</dt>
-              <dd>{bereichFilter}</dd>
-              <dt>Analyseeinheit:</dt>
-              <dd>{bulaFilter}</dd>
-              <dt>Gruppe:</dt>
-              <dd>
-                {teilpopFilter === 'Alle'
-                  ? 'Alle'
-                  : teilpopFilter === 'Ohne Insgesamt'
-                    ? 'Ohne Insgesamt'
-                    : TEILPOP_LABELS[teilpopFilter as Teilpop]}
-              </dd>
-              <dt>Anzahl Gruppen:</dt>
-              <dd>{groups.length}</dd>
-            </dl>
-          </div>
         </div>
       </div>
 

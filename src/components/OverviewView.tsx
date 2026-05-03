@@ -100,6 +100,7 @@ export function OverviewView() {
         </div>
       </div>
 
+
       <div className="overview-footer">
         <p className="caption">
           <strong>Quelle:</strong> IQB-Bildungstrend 2022 in der Sekundarstufe I
